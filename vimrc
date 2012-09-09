@@ -25,11 +25,14 @@ call vundle#rc()
  " original repos on github
 
  Bundle 'scrooloose/nerdtree'
+ Bundle 'wookiehangover/jshint'
  Bundle 'Lokaltog/vim-easymotion'
  Bundle 'Lokaltog/vim-powerline'
  Bundle 'feng92f/minibufexpl.vim'
+ Bundle 'dterei/VimBookmarking'
  Bundle 'altercation/vim-colors-solarized'
  Bundle 'tomtom/tcomment_vim'
+ Bundle 'vim-scripts/AutoComplPop'
  " vim-scripts repos
 
  " non github repos
@@ -80,6 +83,7 @@ if has('gui_running')
     "Hide MacVim toolbar by default
     set go-=T
 else
+    colorscheme blue
     set background=light
 endif
 
@@ -187,3 +191,15 @@ imap jj <esc>
 "nmap <C-Down> ddp
 " Fast saving
 nmap <leader>w :w!<cr>
+
+
+"====================================================
+let g:Powerline_symbols = 'fancy'
+let g:Powerline_colorscheme = 'distinguished'
+" let g:Powerline_segments['ctrlp'] = ['ctrlp:regexp', 'ctrlp:navigation', 'ctrlp:path']
+" let g:Powerline_segments['default'] = ['mode_indicator',
+"                                                            \  'git_branch',
+"                                                            \  'filename',
+"                                                            \  'syntastic',
+"                                                            \  'separator',
+"                                                            \  'fileformat', 'encoding', 'filetype']
