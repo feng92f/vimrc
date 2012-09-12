@@ -71,7 +71,7 @@ set hidden
 "=====================================Colors & Fonts ==========================
 
 syntax enable
-set guifont=Andale\ Mono\ 11
+set guifont=Andale\ Mono\ 13
 colorscheme desert
 
 if has('gui_running')
@@ -83,8 +83,7 @@ if has('gui_running')
     "Hide MacVim toolbar by default
     set go-=T
 else
-    colorscheme blue
-    set background=light
+    colorscheme Tomorrow-Night-Blue
 endif
 
 
@@ -156,6 +155,14 @@ nmap <C-Down> <C-w>j
 nmap <C-Up> <C-w>k
 nmap <C-Right> <C-w>l
 
+
+map <F1> <Esc>
+nmap <F1> <Esc>
+imap <F1> <Esc>
+ " Keyboard mappings
+map <F2> :previous<CR>  " map F1 to open previous buffer
+map <F3> :next<CR>      " map F2 to open next buffe
+
 "===========Buffers===================
 "Automatically change current directory to that of the file in the buffer
 autocmd BufEnter * cd %:p:h
@@ -194,12 +201,3 @@ nmap <leader>w :w!<cr>
 
 
 "====================================================
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_colorscheme = 'distinguished'
-" let g:Powerline_segments['ctrlp'] = ['ctrlp:regexp', 'ctrlp:navigation', 'ctrlp:path']
-" let g:Powerline_segments['default'] = ['mode_indicator',
-"                                                            \  'git_branch',
-"                                                            \  'filename',
-"                                                            \  'syntastic',
-"                                                            \  'separator',
-"                                                            \  'fileformat', 'encoding', 'filetype']
