@@ -2,8 +2,11 @@ set nocompatible               " be iMproved
 filetype off                   " required!
 set encoding=utf-8
 set fileencodings=utf-8
+set fileencodings=utf-8,gbk,ucs-bom,cp936
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
+
+let &termencoding=&encoding
 
 
 "Enable filetypes
@@ -13,7 +16,7 @@ filetype indent on
 syntax on
 
 "====================================Bundles================================
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/vim/bundle/vundle/
 call vundle#rc()
 
  " let Vundle manage Vundle
@@ -23,9 +26,16 @@ call vundle#rc()
  " My Bundles here:
  "
  " original repos on github
+ "
+ "Bundle 'scrooloose/nerdtree'
 
- Bundle 'scrooloose/nerdtree'
- Bundle 'wookiehangover/jshint'
+
+ Bundle 'Xuyuanp/git-nerdtree.git'
+
+
+
+ Bundle 'kien/ctrlp.vim'
+ "Bundle 'wookiehangover/jshint'
  Bundle 'Lokaltog/vim-easymotion'
  Bundle 'Lokaltog/vim-powerline'
  Bundle 'feng92f/minibufexpl.vim'
@@ -33,6 +43,7 @@ call vundle#rc()
  Bundle 'altercation/vim-colors-solarized'
  Bundle 'tomtom/tcomment_vim'
  Bundle 'vim-scripts/AutoComplPop'
+ "
  " vim-scripts repos
 
  " non github repos
@@ -48,9 +59,8 @@ call vundle#rc()
  "
  " see :h vundle for more details or wiki for FAQ
  " NOTE: comments after Bundle command are not allowed..
-
-"let mapleader = ","
-"let g:mapleader = ","
+let mapleader = ','
+let g:mapleader = ','
 
 "Ever notice a slight lag after typing the leader key + command? This lowers
 "the timeout.
@@ -71,20 +81,19 @@ set hidden
 "=====================================Colors & Fonts ==========================
 
 syntax enable
-set guifont=Andale\ Mono\ 13
+
+"set guifont=Monaco:h16
+set guifont=Anonymous\ Pro:h18
+
 colorscheme desert
 
-if has('gui_running')
-    set background=dark
-    set guioptions-=T
-    set guioptions+=e
-    set t_Co=256
-    set guitablabel=%M\ %t 
-    "Hide MacVim toolbar by default
-    set go-=T
-else
-    colorscheme Tomorrow-Night-Blue
-endif
+set background=dark
+set guioptions-=T
+set guioptions+=e
+set t_Co=256
+set guitablabel=%M\ %t 
+"Hide MacVim toolbar by default
+set go-=T
 
 
 "=====================================Indenting==========================
